@@ -1,0 +1,14 @@
+{
+  "name": "carrinho_de_compras",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index",
+    "dev:watch": "node --watch src/index"
+  },
+  "version": "1.0.0",
+  "description": "Clonando lógica do carrinho de compras da shopee",
+  "main": "index.js",
+  "author": "Alexsandro.Souza",
+  "license": "ISC"
+}

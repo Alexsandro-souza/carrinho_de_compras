@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Garrafa Stanley",
+    "description": "Conserva sua bebida na temperatura. Capacidade para 500 ml",
+    "price": "150.2",
+    "subtotal": 0
+  },
+  {
+    "name": "Caneta Big",
+    "description": "Caneta eferiografica azul.",
+    "price": "2.5",
+    "subtotal": 0
+  }
+]
