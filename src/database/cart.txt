@@ -1,14 +1,32 @@
 [
   {
-    "owner": 'Alexsandro',
-    "cart": [
-      {
-        "name": 'Garrafa Stanley',
-        "description":
-          'Conserva sua bebida na temperatura. Capacidade para 500 ml',
-        "price": '150.2',
-        "subtotal": 0,
-      },
-    ],
+    "name": "Garrafa Stanley",
+    "description": "Conserva sua bebida na temperatura. Capacidade para 500 ml",
+    "price": "150.2",
+    "subtotal": 0
   },
-];
+  {
+    "name": "Caneta Big",
+    "description": "Caneta eferiografica azul.",
+    "price": "2.5",
+    "subtotal": 0
+  },
+  {
+    "name": "Perfume",
+    "description": "Boticario viva a vida cheirosa.",
+    "price": "150.2",
+    "subtotal": 0
+  },
+  {
+    "name": "Teclado",
+    "description": "Multlaser de 200 botões",
+    "price": "100",
+    "subtotal": 0
+  },
+  {
+    "name": "Controle",
+    "description": "Controle LG 100 botões ",
+    "price": "20.5",
+    "subtotal": 0
+  }
+]

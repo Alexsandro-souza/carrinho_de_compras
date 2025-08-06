@@ -1,4 +1,5 @@
 import { toRegister } from '../conectionDB/conectionDb.js';
+import { database } from '../conectionDB/pathDbs.js';
 import { newPrompt, closePrompt } from '../prompt/prompt.js';
 import schemas from '../prompt/schema.js';
 
@@ -13,9 +14,9 @@ export const registerItem = async () => {
   for (const key in newItem) {
     if (interator > 3) break;
     newItem[key] = await newPrompt(schemas[interator]);
+    await closePrompt();
     interator++;
   }
 
-  await toRegister(newItem);
-  closePrompt();
+  await toRegister(newItem,database);
 };

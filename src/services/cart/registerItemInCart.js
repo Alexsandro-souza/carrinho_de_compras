@@ -1,19 +1,10 @@
 import { toRead } from '../conectionDB/conectionDb.js';
 import { closePrompt, newPrompt } from '../prompt/prompt.js';
 import schemas from '../prompt/schema.js';
+import { database, cart } from '../conectionDB/pathDbs.js';
+import { showItens } from '../utils/utils.js';
+import {toRegister } from '../conectionDB/conectionDb.js'
 
-const showItens = async () => {
-  const items = await toRead();
-  console.log('====================');
-  items.forEach((item, index) => {
-    console.log(`\nItem: ${index + 1}`);
-    console.log(`Produto: ${item.name}\nPreço: ${item.price}`);
-    console.log(`___________________________________________\n\n`);
-  });
-  return items;
-};
-
-//let addMoreItem = await newPrompt(schema[5]);
 const choice = async (itens) => {
   let addItem = (await newPrompt(schemas[4])) - 1;
   const isValidChoice = addItem <= itens.length;
@@ -21,17 +12,16 @@ const choice = async (itens) => {
     console.log('Esse item não existe!!!');
     return;
   }
-  const fullItem = itens[addItem]; // Adicionar isso no banco
-  console.log(fullItem);
+  const chosenItem = itens[addItem];
+  await closePrompt();
+  return chosenItem;
 };
 
 export const registerItemInCart = async () => {
   await closePrompt();
-  const itens = await showItens();
-  await choice(itens);
-
-  // while (addMore === '1') {
-  //   await showItens();
-  //   add = await newPrompt(schema[4]);
-  // }
+  const itensDb = await showItens(database);
+  const chosen = await choice(itensDb);
+  toRegister(chosen, cart);
+  const itensCart = await showItens(cart);
+  console.log('Item adicionado ao carrinho com sucesso!!!');
 };

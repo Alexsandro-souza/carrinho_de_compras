@@ -10,5 +10,23 @@
     "description": "Caneta eferiografica azul.",
     "price": "2.5",
     "subtotal": 0
+  },
+  {
+    "name": "Test",
+    "description": "Descricao test",
+    "price": "10.2",
+    "subtotal": 0
+  },
+  {
+    "name": "Caderno",
+    "description": "200 páginas",
+    "price": "10",
+    "subtotal": 0
+  },
+  {
+    "name": "Controle",
+    "description": "Controle LG 100 botões ",
+    "price": "20.5",
+    "subtotal": 0
   }
 ]

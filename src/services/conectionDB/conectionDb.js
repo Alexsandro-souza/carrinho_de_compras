@@ -1,18 +1,15 @@
 import { readFile, writeFile } from 'fs';
-import path from 'path';
 
-const filePath = path.join(process.cwd(), 'src', 'database', 'database.txt');
-
-const toRead = async () => {
+const toRead = async (path) => {
   return new Promise((resolve) => {
-    readFile(filePath, 'utf8', (err, data) => {
+    readFile(path, 'utf8', (err, data) => {
       err ? console.log(err) : resolve(JSON.parse(data));
     });
   });
 };
 
-const toRegister = async (newData) => {
-  const data = await toRead();
+const toRegister = async (newData, filePath) => {
+  const data = await toRead(filePath);
   return new Promise((resolve) => {
     writeFile(
       filePath,
