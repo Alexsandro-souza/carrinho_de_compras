@@ -6,15 +6,18 @@ import { showItens } from '../utils/utils.js';
 import {toRegister } from '../conectionDB/conectionDb.js'
 
 const choice = async (itens) => {
-  let addItem = (await newPrompt(schemas[4])) - 1;
+  let addItem = (await newPrompt(schemas[5])) - 1;
   const isValidChoice = addItem <= itens.length;
   if (!isValidChoice) {
     console.log('Esse item não existe!!!');
     return;
   }
-  const chosenItem = itens[addItem];
+  const fullItem = itens[addItem];
   await closePrompt();
-  return chosenItem;
+  const amount = await newPrompt(schemas[4]);
+  await closePrompt();
+  fullItem.amount = amount;
+  return fullItem;
 };
 
 export const registerItemInCart = async () => {
@@ -22,6 +25,5 @@ export const registerItemInCart = async () => {
   const itensDb = await showItens(database);
   const chosen = await choice(itensDb);
   toRegister(chosen, cart);
-  const itensCart = await showItens(cart);
   console.log('Item adicionado ao carrinho com sucesso!!!');
 };
