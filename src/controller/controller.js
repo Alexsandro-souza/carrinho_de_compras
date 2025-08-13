@@ -1,8 +1,8 @@
 import { registerItem } from '../services/item/registerItem.js';
 import { registerItemInCart } from '../services/cart/registerItemInCart.js';
 import { closePrompt } from '../services/prompt/prompt.js';
-import { showItens } from '../services/utils/utils.js';
 import { cart } from '../services/conectionDB/pathDbs.js';
+import { showItemInCart } from '../services/cart/showItemInCart.js';
 
 export const controller = async(options) => {
   await closePrompt();
@@ -11,7 +11,7 @@ export const controller = async(options) => {
       registerItem();
       break;
     case '2':
-      showItens(cart);
+      showItemInCart(cart);
       break;
     case '3':
       registerItemInCart();
