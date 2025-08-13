@@ -8,7 +8,7 @@ export const registerItem = async () => {
     name: '',
     description: '',
     price: 0,
-    subtotal: 0,
+    amount: 1,
   };
   let interator = 1;
   for (const key in newItem) {

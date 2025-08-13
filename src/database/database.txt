@@ -1,32 +1,26 @@
 [
   {
-    "name": "Garrafa Stanley",
-    "description": "Conserva sua bebida na temperatura. Capacidade para 500 ml",
+    "name": "Perfume",
+    "description": "Boticario viva a vida cheirosa.",
     "price": "150.2",
-    "subtotal": 0
+    "amount": "1"
   },
   {
-    "name": "Caneta Big",
-    "description": "Caneta eferiografica azul.",
-    "price": "2.5",
-    "subtotal": 0
+    "name": "Grampeador",
+    "description": "Jocar Office Preto",
+    "price": "20.8",
+    "amount": "1"
   },
   {
-    "name": "Test",
-    "description": "Descricao test",
-    "price": "10.2",
-    "subtotal": 0
+    "name": "TV LG",
+    "description": "TV Smart de 32 Polegadas",
+    "price": "899.99",
+    "amount": "1"
   },
   {
-    "name": "Caderno",
-    "description": "200 páginas",
-    "price": "10",
-    "subtotal": 0
-  },
-  {
-    "name": "Controle",
-    "description": "Controle LG 100 botões ",
-    "price": "20.5",
-    "subtotal": 0
+    "name": "Celular Redmi",
+    "description": "Modelo 10C 4,0 Gb Ram Snapfragon 680 Octa-core Max 2.40Ghz",
+    "price": "1299.00",
+    "amount": 1
   }
 ]

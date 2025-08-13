@@ -15,11 +15,36 @@ const toRegister = async (newData, filePath) => {
       filePath,
       JSON.stringify([...data, newData], null, 2),
       'utf8',
-      (err) => {
-        err ? reject(err) : resolve();
-      }
+      (err) => (err ? reject(err) : resolve())
     );
   });
 };
 
-export { toRead, toRegister };
+const toRemove = (path, index, data) => {
+  data.splice(index, 1);
+  return new Promise((resolve) => {
+    writeFile(path, JSON.stringify([...data], null, 2), 'utf8', (err) => {
+      if (err) {
+        reject();
+        console.log(err);
+      }
+      console.log(`Item ${index + 1} removido com sucesso!!!\n\n`);
+      resolve();
+    });
+  });
+};
+
+const toUpdade = async (path, data, index) => {
+  return new Promise((resolve) => {
+    writeFile(path, JSON.stringify([...data], null, 2), 'utf8', (err) => {
+      if (err) {
+        reject();
+        console.log(err);
+      }
+      console.log(`Item ${index + 1} atualizado com sucesso!!!\n\n`);
+      resolve();
+    });
+  });
+};
+
+export { toRead, toRegister, toRemove, toUpdade };
